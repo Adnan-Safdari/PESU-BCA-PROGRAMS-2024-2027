@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Learning Hub</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #61dafb;
+            --secondary-color: #4ade80;
+            --background-color: #1a1a1a;
+            --text-color: #e0e0e0;
+            --sidebar-bg: #2a2a2a;
+            --content-bg: #2d2d2d;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+        .sidebar {
+            height: 100vh;
+            position: sticky;
+            top: 0;
+            background-color: var(--sidebar-bg);
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            padding-top: 20px;
+        }
+        .sidebar .nav-link {
+            color: var(--text-color);
+            transition: all 0.3s;
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+        .sidebar .nav-link:hover, .sidebar .nav-link.active {
+            background-color: var(--primary-color);
+            color: var(--background-color);
+        }
+        .main-content {
+            background-color: var(--content-bg);
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+            padding: 40px;
+            margin-top: 20px;
+        }
+        h2 {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        h3 {
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+        pre {
+            background-color: #282c34;
+            border-radius: 5px;
+            padding: 15px;
+        }
+        .output {
+            background-color: #3a3a3a;
+            border-radius: 5px;
+            padding: 15px;
+            margin-top: 10px;
+            font-family: 'Courier New', monospace;
+            color: #d4d4d4;
+        }
+        .section-content {
+            border-bottom: 1px solid #444444;
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+        }
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: var(--background-color);
+        }
+        .btn-primary:hover {
+            background-color: #3fa8d5;
+            border-color: #3fa8d5;
+            color: var(--background-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-3 col-lg-2 d-md-block sidebar">
+                <div class="position-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-3">
+                            <a class="nav-link active" href="#">
+                                <h5 class="text-center">Python Learning Hub</h5>
+                            </a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a class="nav-link" href="#strings">
+                                Strings
+                            </a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a class="nav-link" href="#defining-strings">
+                                Defining Strings
+                            </a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a class="nav-link" href="#slicing-strings">
+                                Slicing Strings
+                            </a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a class="nav-link" href="#handling-strings-with-digits">
+                                Handling Strings with Digits
+                            </a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a class="nav-link" href="#built-in-functions-for-strings">
+                                Built-in Functions for Strings
+                            </a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a class="nav-link" href="#as-integer-ratio-for-float">
+                                as_integer_ratio() for float
+                            </a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a class="nav-link" href="#bit-length">
+                                bit_length()
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <div class="main-content">
+                    <section id="strings">
+                        <h2 class="mb-4">Python Strings</h2>
+                        
+                        <div class="section-content">
+                            <h3 id="defining-strings" class="mt-5 mb-4">Defining Strings</h3>
+                            <pre><code class="python">
+my_string1 = 'hello'
+my_string2 = "hello"
+my_string3 = '''Hello'''
+my_string4 = """Hello"""
+my_str = 'programming'
+
+print(my_string1)
+print(my_string2)
+print(my_string3)
+print(my_string4)
+print('my_str=', my_str)
+                            </code></pre>
+                            <div class="output">
+                                Output:<br>
+                                hello<br>
+                                hello<br>
+                                Hello<br>
+                                Hello<br>
+                                my_str= programming
+                            </div>
+                        </div>
+
+                        <div class="section-content">
+                            <h3 id="slicing-strings" class="mt-5 mb-4">Slicing Strings</h3>
+                            <pre><code class="python">
+print('my_str[0]=', my_str[0])
+print('my_str[-1]=', my_str[-1])
+print('my_str[1:5]=', my_str[1:5])
+print('my_str[5:-2]=', my_str[5:-2])
+print(my_str[:2])
+print(my_str[::2])
+print(my_str[::-1])
+                            </code></pre>
+                            <div class="output">
+                                Output:<br>
+                                my_str[0]= p<br>
+                                my_str[-1]= g<br>
+                                my_str[1:5]= rogr<br>
+                                my_str[5:-2]= ammi<br>
+                                pr<br>
+                                pormig<br>
+                                gnimmargorp
+                            </div>
+                        </div>
+
+                        <div class="section-content">
+                            <h3 id="handling-strings-with-digits" class="mt-5 mb-4">Handling Strings with Digits</h3>
+                            <pre><code class="python">
+string_filter_digits = "Hello 321 World 123"
+result_digits_check = all(char.isdigit() for char in string_filter_digits)
+print(result_digits_check)
+result_digits_check = any(char.isdigit() for char in string_filter_digits)
+print(result_digits_check)
+                            </code></pre>
+                            <div class="output">
+                                Output:<br>
+                                False<br>
+                                True
+                            </div>
+                        </div>
+
+                        <div class="section-content">
+                            <h3 id="built-in-functions-for-strings" class="mt-5 mb-4">Built-in Functions for Strings</h3>
+                            <pre><code class="python">
+myVarForMaxMin = "HelloWorld89"
+print(f"Max: {max(myVarForMaxMin)}")
+print(f"Min: {min(myVarForMaxMin)}")
+print(f"Type: {type(myVarForMaxMin)}")
+print(f"Length: {len(myVarForMaxMin)}")
+print(f"ID: {id(myVarForMaxMin)}")
+                            </code></pre>
+                            <div class="output">
+                                Output:<br>
+                                Max: r<br>
+                                Min: 8<br>
+                                Type: &lt;class 'str'&gt;<br>
+                                Length: 12<br>
+                                ID: (some number, will vary)
+                            </div>
+                        </div>
+
+                        <div class="section-content">
+                            <h3 id="as-integer-ratio-for-float" class="mt-5 mb-4">as_integer_ratio() for float</h3>
+                            <pre><code class="python">
+myFloatingNumber = float("5.5")
+print(f"Ratio: {myFloatingNumber.as_integer_ratio()}")
+print(f"Ratio type: {type(myFloatingNumber.as_integer_ratio())}")
+                            </code></pre>
+                            <div class="output">
+                                Output:<br>
+                                Ratio: (11, 2)<br>
+                                Ratio type: &lt;class 'tuple'&gt;
+                            </div>
+                        </div>
+
+                        <div class="section-content">
+                            <h3 id="bit-length" class="mt-5 mb-4">bit_length()</h3>
+                            <pre><code class="python">
+bit_check_number = 15
+print(f"Bit Length: {bit_check_number.bit_length()}")
+                            </code></pre>
+                            <div class="output">
+                                Output:<br>
+                                Bit Length: 4
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-light text-center py-3 mt-5">
+        <p>&copy; 2023 Python Learning Hub. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>
